@@ -6,11 +6,11 @@
     "zod": "^3.24.2"
   },
   "name": "app",
-  "module": "index.ts",
+  "module": "server/index.ts",
   "type": "module",
   "script": {
-    "start": "bun index.ts",
-    "dev": "bun --watch index.ts"
+    "start": "bun server/index.ts",
+    "dev": "bun --watch server/index.ts"
   },
   "private": true,
   "devDependencies": {
