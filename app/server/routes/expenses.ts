@@ -45,11 +45,18 @@ export const expensesRoute = new Hono()
       expenses: fakeExpenses,
     });
   })
+
   .post("/", zValidator("json", createPostSchema), async (c) => {
     const data = await c.req.valid("json");
     const expense = createPostSchema.parse(data);
     fakeExpenses.push({ ...expense, id: fakeExpenses.length + 1 });
     return c.json(expense);
+  })
+  .get("/total-spent", (c) => {
+    const total = fakeExpenses.reduce((sum, expense) => sum + expense.amount, 0);
+    return c.json({
+      total,
+    });
   })
   .get("/:id{[0-9]+}", async (c) => {
     const id = Number.parseInt(c.req.param("id"));
