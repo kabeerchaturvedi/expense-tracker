@@ -14,6 +14,7 @@
 - Added Shadcn
 - Added React/Vite Proxy 
 - Added TanStack Query 
+- Added Tanstack Router
 
 
 
