@@ -15,6 +15,7 @@
 - Added React/Vite Proxy 
 - Added TanStack Query 
 - Added Tanstack Router
+- Added Tanstack Form
 
 
 
